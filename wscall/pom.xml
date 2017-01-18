@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.btpn</groupId>
+	<artifactId>wscall</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>wscall</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<applicationconfig.version>0.0.1-SNAPSHOT</applicationconfig.version>
+		<runningnumber.version>0.0.1-SNAPSHOT</runningnumber.version>
+		<util.version>0.0.1-SNAPSHOT</util.version>
+		<auth.version>0.0.1-SNAPSHOT</auth.version>
+		<response.version>0.0.1-SNAPSHOT</response.version>
+
+		<servlet.version>3.1.0</servlet.version>
+		<spring.webmvc.version>4.3.3.RELEASE</spring.webmvc.version>
+		<httpclient.version>4.5.2</httpclient.version>
+		<slf4j.version>1.7.21</slf4j.version>
+	</properties>
+
+	<dependencies>
+		<!-- Sibling -->
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>applicationconfig</artifactId>
+			<version>${applicationconfig.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>runningnumber</artifactId>
+			<version>${runningnumber.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>util</artifactId>
+			<version>${util.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>auth</artifactId>
+			<version>${auth.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>response</artifactId>
+			<version>${response.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.webmvc.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Logging -->
+			<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		
+		<!-- Apache HTTP Client -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>wscall</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

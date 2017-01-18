@@ -1,0 +1,4 @@
+com\btpn\logging\annotation\EnableLogging.class
+com\btpn\logging\LoggingAspect.class
+com\btpn\logging\config\LoggingConfig.class
+com\btpn\logging\annotation\Logging.class

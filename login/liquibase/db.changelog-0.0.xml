@@ -1,0 +1,249 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<changeSet author="JD" id="0.0-1">
+		<createTable tableName="sys_app_config">
+			<column name="CONFIG_KEY" type="VARCHAR(200)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="CONFIG_VALUE" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+
+	<changeSet author="JD" id="0.0-2">
+		<createTable tableName="sys_jwt_role">
+			<column name="jwt_role_code" type="VARCHAR(200)">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="jwt_role_name" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="description" type="VARCHAR(200)" />
+			<column name="created_by" type="VARCHAR(200)" />
+			<column name="created_date" type="datetime" />
+			<column name="modified_by" type="VARCHAR(200)" />
+			<column name="modified_date" type="datetime" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="JD" id="0.0-3">
+		<createTable tableName="sys_jwt_role_menu">
+			<column name="jwt_role_menu_id" type="VARCHAR(50)">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="jwt_role_code" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="menu_code" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(200)" />
+			<column name="created_date" type="datetime" />
+			<column name="modified_by" type="VARCHAR(200)" />
+			<column name="modified_date" type="datetime" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="JD" id="0.0-4">
+		<createTable tableName="sys_menu">
+			<column name="menu_code" type="VARCHAR(200)">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="url" type="VARCHAR(500)">
+				<constraints nullable="false" />
+			</column>
+			<column name="description" type="VARCHAR(500)" />
+			<column name="order" type="VARCHAR(20)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(200)" />
+			<column name="created_date" type="datetime" />
+			<column name="modified_by" type="VARCHAR(200)" />
+			<column name="modified_date" type="datetime" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="JD" id="0.0-5">
+		<createTable tableName="sys_menu_service">
+			<column name="menu_service_id" type="VARCHAR(50)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="menu_code" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="service_code" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(200)" />
+			<column name="created_date" type="datetime" />
+			<column name="modified_by" type="VARCHAR(200)" />
+			<column name="modified_date" type="datetime" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="JD" id="0.0-6">
+		<createTable tableName="sys_response_mapping">
+			<column name="response_code" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="response_desc" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="JD" id="0.0-7">
+		<createTable tableName="sys_role">
+			<column name="role_id" type="VARCHAR(50)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="role_name" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="description" type="VARCHAR(500)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(200)" />
+			<column name="created_date" type="datetime" />
+			<column name="modified_by" type="VARCHAR(200)" />
+			<column name="modified_date" type="datetime" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="JD" id="0.0-8">
+		<createTable tableName="sys_role_menu">
+			<column name="role_menu_id" type="VARCHAR(50)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="role_id" type="INT UNSIGNED">
+				<constraints nullable="false" />
+			</column>
+			<column name="menu_code" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(200)" />
+			<column name="created_date" type="datetime" />
+			<column name="modified_by" type="VARCHAR(200)" />
+			<column name="modified_date" type="datetime" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="JD" id="0.0-9">
+		<createTable tableName="sys_role_service">
+			<column name="role_service_id" type="VARCHAR(50)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="role_id" type="INT UNSIGNED">
+				<constraints nullable="false" />
+			</column>
+			<column name="service_code" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(200)" />
+			<column name="created_date" type="datetime" />
+			<column name="modified_by" type="VARCHAR(200)" />
+			<column name="modified_date" type="datetime" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="JD" id="0.0-10">
+		<createTable tableName="sys_service">
+			<column name="service_code" type="VARCHAR(200)">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="description" type="VARCHAR(500)" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="JD" id="0.0-11">
+		<createTable tableName="sys_user">
+			<column name="user_name" type="VARCHAR(200)">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="name" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="password" type="VARCHAR(256)">
+				<constraints nullable="false" />
+			</column>
+			<column name="engine" type="VARCHAR(100)" />
+			<column name="created_by" type="VARCHAR(200)" />
+			<column name="created_date" type="datetime" />
+			<column name="modified_by" type="VARCHAR(200)" />
+			<column name="modified_date" type="datetime" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet author="JD" id="0.0-12">
+		<createTable tableName="sys_user_role">
+			<column name="user_role_id" type="VARCHAR(50)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="user_name" type="VARCHAR(200)">
+				<constraints nullable="false" />
+			</column>
+			<column name="role_id" type="INT UNSIGNED">
+				<constraints nullable="false" />
+			</column>
+			<column name="created_by" type="VARCHAR(200)" />
+			<column name="created_date" type="datetime" />
+			<column name="modified_by" type="VARCHAR(200)" />
+			<column name="modified_date" type="datetime" />
+		</createTable>
+	</changeSet>
+
+	<changeSet author="JD" id="0.0-13">
+		<createTable tableName="sys_running_number">
+			<column name="running_number_code" type="VARCHAR(50)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="start" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column name="end" type="INT">
+				<constraints nullable="true"  />
+			</column>
+			<column name="current" type="INT">
+				<constraints nullable="false" />
+			</column>
+			<column name="cache_interval" type="INT">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+<!--
+ 	<changeSet author="JD" id="0.0-14">
+		<createTable tableName="cls_closing_approval">
+			<column name="closing_approval_id" type="VARCHAR(50)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="document_id" type="VARCHAR(50)">
+				<constraints nullable="false" />
+			</column>
+			<column name="status" type="VARCHAR(50)">
+				<constraints nullable="false" />
+			</column>
+			<column name="data" type="longtext">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+	<changeSet author="ANG" id="0.0-15">
+		<createTable tableName="sys_param_business">
+			<column name="param_key" type="VARCHAR(50)">
+				<constraints primaryKey="true" nullable="false"/>
+			</column>
+			<column name="param_name" type="VARCHAR(100)">
+				<constraints nullable="false" />
+			</column>
+			<column name="param_group" type="VARCHAR(50)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+ -->	
+</databaseChangeLog>

@@ -1,0 +1,9 @@
+com\btpn\persistence\entity\ApplicationConfigEntity.class
+com\btpn\persistence\service\applicationconfig\ApplicationConfigDaoServiceImpl.class
+com\btpn\applicationconfig\annotation\EnableLoadAppConfig.class
+com\btpn\applicationconfig\config\LoadAppConfigurationConfig.class
+com\btpn\persistence\entity\ApplicationConfigEntity$Constant.class
+com\btpn\persistence\service\applicationconfig\ApplicationConfigRepo.class
+com\btpn\applicationconfig\ApplicationConfigDBImpl.class
+com\btpn\applicationconfig\ApplicationConfig.class
+com\btpn\persistence\service\applicationconfig\ApplicationConfigDaoService.class

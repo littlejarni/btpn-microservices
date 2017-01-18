@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.btpn</groupId>
+	<artifactId>closingcustomer</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>closingcustomer Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.1.RELEASE</version>
+	</parent>
+
+	<properties>
+		<start-class>com.btpn.Application</start-class>
+		<util.version>0.0.1-SNAPSHOT</util.version>
+		<response.version>0.0.1-SNAPSHOT</response.version>
+		<logging.version>0.0.1-SNAPSHOT</logging.version>
+		<auth.version>0.0.1-SNAPSHOT</auth.version>
+		<runningnumber.version>0.0.1-SNAPSHOT</runningnumber.version>
+		<usermanagement-entity.version>0.0.1-SNAPSHOT</usermanagement-entity.version>
+		<wscall.version>0.0.1-SNAPSHOT</wscall.version>
+		<common.version>0.0.1-SNAPSHOT</common.version>
+
+		<mysql.connector.version>5.1.31</mysql.connector.version>
+		<applicationconfig.version>0.0.1-SNAPSHOT</applicationconfig.version>
+	</properties>
+
+	<dependencies>
+		<!-- Sibling -->
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>util</artifactId>
+			<version>${util.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>logging</artifactId>
+			<version>${logging.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>applicationconfig</artifactId>
+			<version>${applicationconfig.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>response</artifactId>
+			<version>${response.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>auth</artifactId>
+			<version>${auth.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>usermanagement-entity</artifactId>
+			<version>${usermanagement-entity.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>runningnumber</artifactId>
+			<version>${runningnumber.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>wscall</artifactId>
+			<version>${wscall.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.btpn</groupId>
+			<artifactId>common</artifactId>
+			<version>${common.version}</version>
+		</dependency>
+
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-ws-core</artifactId>
+		</dependency>
+ 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session</artifactId>
+		</dependency>
+
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- Apache HTTP Client -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>closingcustomer</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>${liquibase.version}</version>
+				<configuration>
+					<changeLogFile>
+						${basedir}/liquibase/db.changelog-master.xml
+					</changeLogFile>
+					<driver>${db.driver}</driver>
+					<url>${db.url}</url>
+					<username>${db.username}</username>
+					<password>${db.password}</password>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
